@@ -9,6 +9,11 @@
 # Dependencies
 node_modules/
 
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+
 # OS noise
 Thumbs.db
 desktop.ini

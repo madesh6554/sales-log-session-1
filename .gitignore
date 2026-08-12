@@ -1,0 +1,15 @@
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Keep the template tracked
+!.env.example
+
+# Dependencies
+node_modules/
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store

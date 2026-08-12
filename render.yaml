@@ -1,0 +1,21 @@
+# Render blueprint. Unlike Netlify, Render runs server.js as a real Node process,
+# so the API routes and the Postgres connection work.
+#
+# DATABASE_URL is declared with sync: false — Render prompts for the value and
+# stores it as a secret on the service. It is deliberately not written here, and
+# must never be committed.
+
+services:
+  - type: web
+    name: forgelite
+    runtime: node
+    plan: free
+    # Closest Render region to the Supabase project (ap-south-1, Mumbai).
+    region: singapore
+    branch: main
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false

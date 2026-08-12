@@ -1,0 +1,9 @@
+# Netlify serves the repo root by default, which has no index.html — the frontend
+# lives in public/. Without this the deployed site 404s on every path.
+#
+# Note: this publishes the static frontend only. server.js does not run on
+# Netlify, so /api/sales and /api/sales/total are unavailable there and the list,
+# the month total and saving a sale will not work on the deployed site.
+
+[build]
+  publish = "public"
